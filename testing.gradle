@@ -1,0 +1,36 @@
+def listOfModules = ["biometrics", "pin", "token", "transakt"]
+
+ext.forEachModule = { command ->
+    def commands = []
+    listOfModules.each {
+        commands.add("$it::$command")
+    }
+    return commands
+}
+
+task assembly {
+    dependsOn('app::assembleDebug', 'app::assembleRelease')
+}
+
+task assemblyLibs {
+    dependsOn(forEachModule('assembleRelease'))
+    finalizedBy assembly
+}
+
+task tests {
+    dependsOn(forEachModule("testDebugUnitTest"), forEachModule("testReleaseUnitTest"))
+    finalizedBy assemblyLibs
+}
+
+task lints {
+    dependsOn(forEachModule("lintRelease"))
+    finalizedBy tests
+}
+
+task testBuild {
+    dependsOn clean
+    finalizedBy lints
+}
+
+
+

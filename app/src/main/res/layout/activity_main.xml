@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/test_transakt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Transakt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/test_fingerprint_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="27dp"
+            android:text="Finger Print"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/test_transakt" />
+
+        <Button
+            android:id="@+id/scanFingerPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/test_fingerprint_title" />
+
+
+        <LinearLayout
+            android:id="@+id/test_fingerprint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/scanFingerPrint">
+
+            <TextView
+                android:id="@+id/test_fingerprint_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="27dp"
+                android:text="Finger Print Status" />
+
+            <TextView
+                android:id="@+id/test_fingerprint_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:text="log output here" />
+
+            <Button
+                android:id="@+id/test_fingerprint_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/test_pin_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="27dp"
+            android:text="pin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/test_fingerprint_layout" />
+
+        <LinearLayout
+            android:id="@+id/test_pin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/test_pin_title">
+
+            <TextView
+                android:id="@+id/test_pin_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="27dp"
+                android:text="Enter a pin, this is save, enter again and app will check if it matchs" />
+
+            <TextView
+                android:id="@+id/test_pin_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not set" />
+
+            <EditText
+                android:id="@+id/test_pin_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="enter new pin"
+                android:paddingTop="27dp" />
+
+            <Button
+                android:id="@+id/test_pin_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set/match pin" />
+
+            <Button
+                android:id="@+id/test_pin_action_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clear pin" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/test_token_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="27dp"
+            android:text="tokens "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/test_pin_layout" />
+
+        <LinearLayout
+            android:id="@+id/test_token_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/test_token_title">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/test_token_assess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="current access" />
+
+                <TextView
+                    android:id="@+id/test_token_access_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="27dp"
+                    android:text="Unset" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/test_token_access_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="enter new access token"
+                android:paddingTop="27dp" />
+
+            <Button
+                android:id="@+id/test_token_access_action"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set access token" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/test_token_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="current refresh" />
+
+                <TextView
+                    android:id="@+id/test_token_refresh_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="27dp"
+                    android:text="Unset" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/test_token_refresh_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="enter new refresh token"
+                android:paddingTop="27dp" />
+
+            <Button
+                android:id="@+id/test_token_refresh_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="set refresh token" />
+
+            <Button
+                android:id="@+id/test_token_clear_all_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clear all" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

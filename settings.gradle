@@ -1,0 +1,6 @@
+include ':app'
+
+rootProject.children.each { subproject ->
+    subproject.buildFileName = "${subproject.name}.gradle"
+}
+include ':parmenionlibraries'
